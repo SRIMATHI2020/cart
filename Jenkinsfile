@@ -1,7 +1,7 @@
 // Nodejs
 pipeline {
     agent {label 'WS' }
-    stages {
+    stages {           ///
         stage('Lint Checks') {
             steps {
               sh "echo Installing Jslint"
@@ -9,7 +9,7 @@ pipeline {
               sh "ls -ltr node_modules/bin/"
               sh "node_modules/jslint/bin/jslint.js server.js"
 
-            }
+            }             /////
         }
     }
 }
