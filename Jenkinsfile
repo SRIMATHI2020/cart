@@ -1,14 +1,18 @@
-// Nodejs
+@Library('Roboshop-shared-libary') _
+
 pipeline {
-    agent {label 'WS' }
-    stages {
+    agent { label 'WS' }
+    stages {           ///
         stage('Lint Checks') {
             steps {
-              sh "echo Installing Jslint"
-              sh "npm i jslint"
-              sh "ls -ltr node_modules/bin/"
-              sh "node_modules/jslint/bin/jslint.js server.js"
-
+                   script {
+                       nodejs.lintchecks()
+                  }
+            }         /////
+        }
+        stage ('Code Compile') {
+            steps{
+                sh "npm install"
             }
         }
     }
