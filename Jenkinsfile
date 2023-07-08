@@ -1,7 +1,7 @@
 @Library('Roboshop-shared-libary')
 
 pipeline {
-    agent {label 'WS' }
+    agent { label 'WS' }
     stages {           ///
         stage('Lint Checks') {
             steps {
